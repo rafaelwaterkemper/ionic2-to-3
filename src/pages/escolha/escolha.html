@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Escolha
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card>
+        <ion-card-content>
+            <ion-item-group>
+                <ion-item-divider color="light">
+                    <ion-icon ios="ios-car" md="md-car" item-left></ion-icon>
+                    Veículos
+                </ion-item-divider>
+                <ion-item>{{ carro.nome }}</ion-item>
+                <ion-item>R$ {{ carro.preco }}</ion-item>
+            </ion-item-group>
+            <ion-item-group>
+                    <ion-item-divider color="light">
+                        <ion-icon ios="ios-options" md="md-options" item-left></ion-icon>
+                        Acessórios
+                    </ion-item-divider>
+                    <ion-item *ngFor="let acessorio of acessorios">
+                        <ion-label>
+                            <h2>{{ acessorio.nome }}</h2>
+                            <h3>R$ {{ acessorio.preco }}</h3>
+                        </ion-label>
+                        <ion-toggle color="secondary"></ion-toggle>
+                    </ion-item>
+                </ion-item-group>
+        </ion-card-content>
+    </ion-card>
+    <button ion-button block>Realizar agendamento</button>
+</ion-content>
